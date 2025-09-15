@@ -6,9 +6,9 @@ Hey there! So I've been coding in C and Java for a while now, and honestly? Pyth
 
 I'm doing some lab assignments that are actually pretty cool:
 
-**labtask1.py** - Built this student grade analyzer that takes names and grades, then spits out averages and pass/fail status. Nothing fancy, just solid fundamentals with lists and loops.
+**grade_report.py** - Built this student grade analyzer that takes names and grades, then spits out averages and pass/fail status. Nothing fancy, just solid fundamentals with lists and loops.
 
-**labtask2.py** - Created my own Caesar cipher! You know, the classic encryption where you shift letters? Mine works with the whole alphabet and handles spaces and punctuation gracefully.
+**ceaser_cipher.py** - Created my own Caesar cipher! You know, the classic encryption where you shift letters? Mine works with the whole alphabet and handles spaces and punctuation gracefully. And i also added decryption function there
 
 ## The Big Picture
 
