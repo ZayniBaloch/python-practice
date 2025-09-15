@@ -8,7 +8,8 @@ I'm doing some lab assignments that are actually pretty cool:
 
 **grade_report.py** - Built this student grade analyzer that takes names and grades, then spits out averages and pass/fail status. Nothing fancy, just solid fundamentals with lists and loops.
 
-**ceaser_cipher.py** - Created my own Caesar cipher! You know, the classic encryption where you shift letters? Mine works with the whole alphabet and handles spaces and punctuation gracefully. And i also added decryption function there
+**ceaser_cipher.py** - Created my own Caesar cipher! You know, the classic encryption where you shift letters? Mine works with the whole alphabet and handles spaces and punctuation gracefully. And i added decryption function there
+- added brute force decryption without shift
 
 ## The Big Picture
 
