@@ -34,6 +34,8 @@ def brute_force_decryption(encrypted_text):
         results.append((int,output))  
     return results
 
+
+
 # get input from user
 shift = int(input("Enter shift value (number): "))
 text = input("Enter text to encrypt: ")
