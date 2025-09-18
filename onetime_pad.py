@@ -1,4 +1,3 @@
-import random
 import secrets
 
 def otp_encryption(text):
