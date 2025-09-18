@@ -1,10 +1,11 @@
 import random
+import secrets
 
 def otp_encryption(text):
     output=""
     key=""
     for i in range(len(text)):
-        num=random.randint(0,255)
+        num=secrets.randbelow(256)
         output+=chr((num + ord(text[i])) % 256)
         key+=chr(num)
     return output,key
