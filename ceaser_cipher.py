@@ -1,20 +1,21 @@
-key='abcdefghijklmnopqrstuvwxyz'
+
+letters="abcdefghijklmnopqrstuvwxyz"
 def encryption(n, plaintext):
     output=""
     for char in plaintext.lower():
         try:
-            i=(key.index(char)+n)%len(key)
-            output+=key[i]
+            i=(letters.index(char)+n)%len(letters)
+            output+=letters[i]
         except:
             output+=char
     return output
-# for decryption
+# decryption
 def decryption(n,encrypted_text):
     output=""
     for char in encrypted_text:
         try:
-            i=(key.index(char)-n)%len(key)
-            output+=key[i]
+            i=(letters.index(char)-n)%len(letters)
+            output+=letters[i]
         except:
             output+=char
     return output
@@ -31,27 +32,38 @@ def brute_force_decryption(encrypted_text):
             except:
                 output+=char
         print(f"shift={int}: {output}")
-        results.append((int,output))  
+        results.append((int,output))
     return results
 
 
 
-# get input from user
-shift = int(input("Enter shift value (number): "))
+
+key=input("Enter the key: ")
 text = input("Enter text to encrypt: ")
 
-# encrypt the text
+
+if len(key) < 5:
+    print("Error: Key must be greater than 5 characters!")
+    exit()
+
+if len(text) < 16:
+    print("text length must be greater then 16 !")
+    exit()
+
+shift=(len(key) * 12) % 26
+
+
 encrypted_text = encryption(shift, text)
 decrypted_text=decryption(shift,encrypted_text)
 
 
-# Display results
+
 print(f"Original text: {text}")
 print(f"Encrypted text: {encrypted_text}")
 print(f"Shift value: {shift}")
 print(f"decrypted text: {decrypted_text}")
 
-bruteforced=brute_force_decryption(encrypted_text)
+# bruteforced=brute_force_decryption(encrypted_text)
 
 
 
