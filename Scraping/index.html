@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koenigsegg Jesko - Ultimate Performance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Satisfy&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 25px 50px;
+            background: transparent;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-btn {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+        }
+
+        .nav-btn:hover {
+            color: #ffffff;
+        }
+
+        .nav-btn.primary {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .nav-btn.primary:hover {
+            color: #ff6b35;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('koenigsegg-jesko-3840x2160-18327.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.8) 0%,
+                rgba(0, 0, 0, 0.4) 40%,
+                rgba(0, 0, 0, 0.1) 70%,
+                transparent 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            width: 100%;
+            padding: 0 50px;
+            margin: 0 auto;
+            animation: heroFadeIn 1.5s ease-out;
+        }
+
+        .hero-left {
+            flex: 1;
+            max-width: 380px;
+            margin-right: 60px;
+        }
+
+        .hero-heading {
+            font-family: 'Satisfy', cursive;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 20%, #ffaa44 40%, #ff8c42 60%, #ffd700 80%, #ff6b35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            letter-spacing: 2px;
+            text-transform: none;
+            text-shadow: 0 0 30px rgba(255, 107, 53, 0.6), 0 0 60px rgba(255, 171, 68, 0.3);
+            position: relative;
+            transform: rotate(-2deg);
+            animation: dreamyGlow 3s ease-in-out infinite alternate;
+        }
+
+        .hero-heading::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 20%, #ffaa44 40%, #ff8c42 60%, #ffd700 80%, #ff6b35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: blur(12px);
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        @keyframes dreamyGlow {
+            0% {
+                text-shadow: 0 0 30px rgba(255, 107, 53, 0.6), 0 0 60px rgba(255, 171, 68, 0.3);
+                filter: brightness(1);
+            }
+            100% {
+                text-shadow: 0 0 40px rgba(255, 107, 53, 0.8), 0 0 80px rgba(255, 171, 68, 0.5), 0 0 120px rgba(255, 215, 0, 0.2);
+                filter: brightness(1.1);
+            }
+        }
+
+        .hero-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            max-width: 450px;
+        }
+
+        .hero-description {
+            font-family: 'Crimson Text', serif;
+            font-size: 17px;
+            font-weight: 250;
+            color: rgba(255, 255, 255, 0.92);
+            line-height: 1.8;
+            max-width: 350px;
+            margin-bottom: 35px;
+            letter-spacing: 0.3px;
+            font-style: normal;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .stat {
+            text-align: right;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .stat:last-child {
+            border-bottom: none;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #ff6b35;
+            display: block;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 1);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-primary {
+            background: #ff6b35;
+            color: #ffffff;
+            border: none;
+        }
+
+        .cta-primary:hover {
+            background: #f7931e;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-secondary:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            text-align: center;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-arrow {
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        /* Animations */
+        @keyframes heroFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .nav-buttons {
+                gap: 10px;
+            }
+
+            .nav-btn {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-left,
+            .hero-right {
+                max-width: 100%;
+            }
+
+            .hero-stats {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 15px;
+            }
+
+            .stat {
+                text-align: center;
+                border-bottom: none;
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                padding-right: 15px;
+                padding-bottom: 0;
+            }
+
+            .stat:last-child {
+                border-right: none;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 12px 15px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .nav-buttons {
+                gap: 8px;
+            }
+
+            .nav-btn {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .hero-content {
+                padding: 0 20px;
+                gap: 30px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-right: 0;
+                padding-bottom: 15px;
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">KOENIGSEGG</a>
+            <div class="nav-buttons">
+                <a href="#" class="nav-btn">Models</a>
+                <a href="#" class="nav-btn">Heritage</a>
+                <a href="#" class="nav-btn">Innovation</a>
+                <a href="#" class="nav-btn">Contact</a>
+                <a href="#" class="nav-btn primary">Configure</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="hero-left">
+                <h2 class="hero-heading">Ghost</h2>
+                <p class="hero-description">
+                    Swedish hypercar engineering at its absolute pinnacle. Advanced aerodynamics, lightweight carbon fiber construction, and a twin-turbocharged V8 engine delivering unprecedented performance on both road and track.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#" class="cta-btn cta-primary">Build & Price</a>
+                    <a href="#" class="cta-btn cta-secondary">Explore</a>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">1600</span>
+                        <span class="stat-label">Horsepower</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">330+</span>
+                        <span class="stat-label">Top Speed (mph)</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2.5</span>
+                        <span class="stat-label">0-60 mph (sec)</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">1420</span>
+                        <span class="stat-label">Weight (kg)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Discover More</span>
+            <span class="scroll-arrow">↓</span>
+        </div>
+    </section>
+</body>
+</html>

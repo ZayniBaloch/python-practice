@@ -4,12 +4,18 @@ if (not os.path.exists("module_sandbox")):
 
 print(os.getcwd()) # its return the directory we are in #
 
-
+# os.chdir("modules")
+# print(os.getcwd())
 isAvailable="readme.md"
 if os.path.exists(isAvailable):
     print(f"the file '{isAvailable}' exist")
 else:
     print("the file doesnt exist")
 ## ok if you you are not using relative path , then we have to carefully chnage directory because of we are using absolute path , python will try to find that file in new folder but it does'nt exist there so will give wrong results##
+
+if os.path.isfile(isAvailable):
+    print("the directory is file")
+else:
+    print("the directory isnt file its folder")
 
 
