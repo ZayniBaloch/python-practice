@@ -6,10 +6,11 @@
 import random
 import threading
 import time
+from sympy import nextprime
 
 # --- 1. GLOBAL PUBLIC VALUES (The Constants) ---
 # Everyone (including Eve) knows these.
-PRIME = 23      # The Clock
+PRIME = nextprime(random.getrandbits(1024))      # The Clock
 GENERATOR = 5   # The Base
 
 # Shared memory to store the results from the threads
